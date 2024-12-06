@@ -1,0 +1,199 @@
+body {
+    background-color: blue;
+    color: #FF6347;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 4em;
+    color: #8B0000;
+    text-shadow: 5px 5px 20px #FF4500;
+    animation: clignoter 1s infinite alternate;
+    font-weight: bold;
+}
+
+/* Animation de clignotement pour rendre le texte perturbant */
+@keyframes clignoter {
+    0% { opacity: 0.8; }
+    50% { opacity: 0; }
+    100% { opacity: 0.8; }
+}
+
+/* Kanban avec une typographie qui déforme le texte */
+.kanban {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 50px;
+    animation: trembler 2s infinite;
+}
+
+@keyframes trembler {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-5px, 0); }
+    50% { transform: translate(5px, -5px); }
+    75% { transform: translate(5px, 5px); }
+    100% { transform: translate(0, 0); }
+}
+
+.colonne {
+    width: 250px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 5px dashed #FF6347;
+    color: #FFF;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    font-family: 'Courier New', monospace;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Icônes d'horreur */
+.icone-horreur {
+    font-size: 3em;
+    color: #FF6347;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.icone-horreur:active {
+    transform: scale(1.5);
+    opacity: 0.7;
+}
+
+/* Images d'horreur */
+.colonne#todo {
+    background-image: url('https://www.example.com/horreur1.jpg'); /* Remplacez par l'URL d'une image d'horreur */
+}
+
+.colonne#inProgress {
+    background-image: url('https://www.example.com/horreur2.jpg'); /* Remplacez par l'URL d'une autre image d'horreur */
+}
+
+.colonne#done {
+    background-image: url('https://www.example.com/horreur3.jpg'); /* Remplacez par l'URL d'une autre image d'horreur */
+}
+
+.carte {
+    background-color: #8B0000;
+    color: #FFF;
+    padding: 10px;
+    margin: 15px 0;
+    border-radius: 10px;
+    opacity: 0;
+    animation: apparition 3s forwards;
+}
+
+@keyframes apparition {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Effet d'animation pour les titres */
+h3 {
+    font-size: 2.5em;
+    color: #FF6347;
+    text-shadow: 3px 3px 10px #8B0000;
+    animation: titreEffet 3s infinite;
+}
+
+@keyframes titreEffet {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Styles pour les éléments de la colonne */
+.colonne h3, .colonne .carte {
+    z-index: 2;
+}
+
+/* Barre de recherche */
+#searchBar {
+    padding: 15px;
+    font-size: 2em;
+    background-color: #222222;
+    color: #FF6347;
+    border: 5px solid #8B0000;
+    border-radius: 15px;
+    margin-top: 50px;
+    width: 60%;
+    font-family: 'Courier New', monospace;
+    transition: background-color 0.3s ease;
+}
+
+#searchBar:focus {
+    background-color: #FF6347;
+    color: #111;
+}
+
+#resultats {
+    margin-top: 20px;
+    font-size: 2em;
+    color: #FF0000;
+    animation: fadein 2s ease-in;
+}
+
+@keyframes fadein {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Menu chaotique */
+.menu {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #FF6347;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    font-family: 'Courier New', monospace;
+}
+
+.menu a {
+    color: #000;
+    font-size: 2.5em;
+    text-decoration: none;
+    padding: 15px;
+    border: 5px solid #FF4500;
+    transition: transform 0.3s ease;
+}
+
+.menu a:hover {
+    transform: scale(1.2);
+}
+.icone-horreur {
+font-size: 3em;
+color: #FF6347;
+cursor: pointer;
+position: relative;
+}
+
+.tooltip {
+position: absolute;
+top: -40px; /* Place le message au-dessus de l'icône */
+left: 50%; /* Centre horizontalement */
+transform: translateX(-50%);
+background-color: #FF6347;
+color: black;
+padding: 5px 10px;
+border-radius: 5px;
+font-size: 1em;
+white-space: nowrap;
+display: none; /* Masque le message par défaut */
+}
+
+.icone-horreur:hover .tooltip {
+display: block; /* Affiche le message lorsque la souris est sur l'icône */
+}

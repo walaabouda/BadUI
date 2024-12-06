@@ -1,0 +1,69 @@
+.horror-game {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    color: white;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    color: red;
+  }
+  
+  .score {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+  
+  .feedback {
+    font-size: 1.2rem;
+    color: yellow;
+  }
+  
+  .question-container {
+    margin: 20px 0;
+  }
+  
+  .image-options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .image-option {
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  .image {
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+  }
+  
+  .image:hover {
+    transform: scale(1.1);
+  }
+  
+  .btn-game {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #8b0000;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 600px) {
+    .image-options {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .image {
+      width: 100px;
+      height: 150px;
+    }
+  }
+  

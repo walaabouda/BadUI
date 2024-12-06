@@ -1,0 +1,117 @@
+/* Palette de couleurs criardes */
+body {
+    font-family: 'Comic Sans MS', 'Papyrus', sans-serif;
+    background-color: blue;
+    color: blue;
+    overflow-y: scroll;
+}
+
+h1 {
+    font-size: 3em;
+    color: #FF0000;
+    text-shadow: 2px 2px 5px #0000FF;
+    background: linear-gradient(45deg, black, blue);
+    animation: clignoter 0.5s infinite alternate;
+    padding: 10px;
+}
+
+@keyframes clignoter {
+    0% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+/* Mise en page désordonnée */
+.contenu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 20px;
+    background-color: #FFFFFF;
+    border: 5px dotted blue;
+    padding: 15px;
+}
+
+.produit {
+    background-color: black;
+    border: 3px solid #00FFFF;
+    padding: 10px;
+    transform: rotate(-5deg);
+    transition: transform 1s;
+}
+
+.produit:hover {
+    transform: rotate(10deg) scale(1.2);
+}
+
+img {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+button {
+    background-color: #00FF00;
+    color: #FF0000;
+    border: 3px solid black;
+    font-family: 'Wingdings', 'Courier New', sans-serif;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 10px;
+    animation: bouger 2s infinite alternate;
+}
+
+@keyframes bouger {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(10px); }
+}
+
+button:hover {
+    background-color: #FF0000;
+    color: #FFFFFF;
+    transform: scale(1.2) rotate(15deg);
+}
+
+/* Champs de formulaire inutiles */
+form {
+    margin-top: 30px;
+    background-color: black;
+    padding: 20px;
+    border: 5px solid #FFFF00;
+    color: #0000FF;
+    font-size: 1.2em;
+    box-shadow: 0 0 15px 5px #00FFFF;
+}
+
+form input, form textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+    border: 3px solid #00FFFF;
+    background-color: #FFFFFF;
+    color: #FF0000;
+    font-size: 1em;
+}
+
+form input:focus, form textarea:focus {
+    background-color: #FF0000;
+    color: #00FFFF;
+    font-weight: bold;
+}
+
+.popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #FF6347;
+    border: 5px dashed #FFFF00;
+    color: #000;
+    padding: 15px;
+    z-index: 1000;
+    animation: disparaitre 3s infinite;
+}
+
+@keyframes disparaitre {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
